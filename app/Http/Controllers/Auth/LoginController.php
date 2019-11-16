@@ -76,9 +76,9 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->route('admin.dashboard');
         }
 
-        return redirect()->back()->withInput($request->only['email']);
+        return redirect()->back()->withErrors(['Invalid email/password combination']);
     }
 }
