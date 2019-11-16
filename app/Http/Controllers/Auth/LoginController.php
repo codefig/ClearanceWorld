@@ -48,7 +48,6 @@ class LoginController extends Controller
 
     public function userLogin(Request $request)
     {
-        // echo "welcome to the route";
 
         $this->validate($request, [
             'matric' => 'required',

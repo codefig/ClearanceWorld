@@ -11,12 +11,13 @@ class LoggedUserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('web');
+        $this->middleware('auth:web');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
+        $request->session()->flush();
         return redirect()->route('user.login');
     }
 }

@@ -43,7 +43,7 @@
                   /></a>
                 </div>
                 <div class="login-content">
-                  <a href="#">Register / Login</a>
+                  <a href="{{ route('user.login') }}">Login</a>
                 </div>
               </div>
             </div>

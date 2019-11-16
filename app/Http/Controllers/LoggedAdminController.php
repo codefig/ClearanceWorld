@@ -20,9 +20,10 @@ class LoggedAdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
+        $request->session()->flush();
         return redirect()->route('admin.login');
     }
 }
