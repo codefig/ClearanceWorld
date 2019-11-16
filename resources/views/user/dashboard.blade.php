@@ -87,7 +87,7 @@
               <span>Support</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="{{ route('user.logout') }}" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -208,7 +208,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="{{ URL::to('mg/theme/team-4-800x800.jpg') }}">
+                  <img alt="Image placeholder" src="{{ URL::to('img/theme/team-4-800x800.jpg') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
@@ -236,7 +236,7 @@
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
+              <a href="{{ route('user.logout') }}" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
@@ -270,7 +270,7 @@
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="img/theme/team-4-800x800.jpg" class="rounded-circle">
+                    <img src="{{ URL::to('img/oau.png') }}" class="rounded-circle">
                   </a>
                 </div>
               </div>
@@ -447,13 +447,7 @@
   <!--   Argon JS   -->
   <script src="{{ URL::to('js/argon-dashboard.min.js?v=1.1.0') }}"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "argon-dashboard-free"
-      });
-  </script>
+
 </body>
 
 </html>

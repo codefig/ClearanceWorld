@@ -108,23 +108,26 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
               </div>
-              <form role="form">
+
+              <form method="POST" action="{{ route('user.login.post') }}">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Matric Number" type="matric">
+                    <input class="form-control" placeholder="Matric Number" type="text" name="matric">
                   </div>
                 </div>
+
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input class="form-control" placeholder="Password" name="password" type="password">
                   </div>
                 </div>
+
                 <div class="custom-control custom-control-alternative custom-checkbox">
                   <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                   <label class="custom-control-label" for=" customCheckLogin">
@@ -132,9 +135,23 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Sign in</button>
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                  <input type="hidden" value="{{ Session::token() }}" name="_token" />
                 </div>
               </form>
+
+                   @if(count($errors) > 0)
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      <span class="sr-only">Close</span>
+                  </button>
+
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+                @endif
             </div>
           </div>
           <div class="row mt-3">
@@ -176,8 +193,7 @@
   <script src="{{ URL::to('js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <!--   Optional JS   -->
   <!--   Argon JS   -->
-  <script src="{{ URL::to('js/argon-dashboard.min.js?v=1.1.0') }}"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
 
 </body>
 
