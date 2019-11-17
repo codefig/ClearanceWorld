@@ -20,4 +20,9 @@ class LoggedUserController extends Controller
         $request->session()->flush();
         return redirect()->route('user.login');
     }
+
+    public function showDashboard()
+    {
+        return view('user.dashboard');
+    }
 }

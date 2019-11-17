@@ -18,15 +18,20 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', 'Auth\LoginController@showUserLoginForm')->name('user.login');
-Route::post('/login', 'Auth\LoginController@userLogin')->name('user.login.post');
-Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm')->name('admin.login');
-Route::post('/admin/login', 'Auth\LoginController@adminLogin')->name('admin.login.post');
-Route::get('/admin/dashboard', 'LoggedAdminController@showDashboard')->name('admin.dashboard');
 
-Route::get('/user/dashboard', function () {
-    return view('user.dashboard');
-})->name('user.dashboard');
 
+Route::group(['prefix' => 'user'], function () {
+
+    Route::get('/login', 'Auth\LoginController@showUserLoginForm')->name('user.login');
+    Route::post('/login', 'Auth\LoginController@userLogin')->name('user.login.post');
+    Route::get('/dashboard', 'LoggedUserController@showDashboard')->name('user.dashboard');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('/login', 'Auth\LoginController@showAdminLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\LoginController@adminLogin')->name('admin.login.post');
+    Route::get('/logout', 'LoggedAdminController@logout')->name('admin.logout');
+    Route::get('/dashboard', 'LoggedAdminController@showDashboard')->name('admin.dashboard');
+});
 Route::get('/user/logout', 'LoggedUserController@logout')->name('user.logout');
-Route::get('/admin/logout', 'LoggedAdminController@logout')->name('admin.logout');
