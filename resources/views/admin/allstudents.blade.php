@@ -207,11 +207,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="../assets/img/theme/team-4-800x800.jpg">
-                </span>
+
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
                 </div>
               </div>
             </a>
@@ -284,7 +281,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">Card tables</h3>
+              <h3 class="mb-0">GRADUATING STUDENT LIST</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush" id="myTable">
@@ -320,7 +317,9 @@
                       </span>
                     </td>
                     <td>
-
+                              <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i> {{ $student->is_serving }}
+                      </span>
                     </td>
                     <td>
                         {{ ($student->is_approved == 1) ? "Approved" : "Unapproved" }}
