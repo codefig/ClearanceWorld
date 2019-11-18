@@ -70,6 +70,9 @@ class LoggedAdminController extends Controller
         $student->department = $request->department;
         $student->email_verified_at = null;
         $student->password = Hash::make($request->password);
+        $student->is_graduating = 1;
+        $student->is_approved = 0;
+        $student->is_serving = 0;
         $student->save();
         $request->session()->flash('success', 'Student added to graduating list successfully');
         return redirect()->back();
@@ -77,7 +80,8 @@ class LoggedAdminController extends Controller
 
     public function showGraduatingList()
     {
-        return view('admin.allstudents');
+        $students = User::all();
+        return view('admin.allstudents', compact('students'));
     }
 
     public function showApproved()
