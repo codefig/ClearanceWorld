@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Department;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoggedAdminController extends Controller
 {
@@ -65,7 +66,22 @@ class LoggedAdminController extends Controller
         ]);
 
         $student = new User($request->all());
+        $student->matric = $request->matric;
+        $student->department = $request->department;
+        $student->email_verified_at = null;
+        $student->password = Hash::make($request->password);
+        $student->save();
         $request->session()->flash('success', 'Student added to graduating list successfully');
         return redirect()->back();
+    }
+
+    public function showGraduatingList()
+    {
+        return view('admin.allstudents');
+    }
+
+    public function showApproved()
+    {
+        return view('admin.showapproved');
     }
 }
