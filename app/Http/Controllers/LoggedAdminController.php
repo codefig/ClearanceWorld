@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Department;
+use App\User;
 
 class LoggedAdminController extends Controller
 {
@@ -44,6 +45,27 @@ class LoggedAdminController extends Controller
         $dept = new Department($request->all());
         $dept->save();
         $request->session()->flash('success', 'Department added successfully');
+        return redirect()->back();
+    }
+
+    public function showAddStudent()
+    {
+        $departments = Department::all();
+
+        return view('admin.addStudent', compact('departments'));
+    }
+
+    public function postAddStudent(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'department' => 'required',
+            'password' => 'required',
+            'matric' => 'required|unique:users,matric',
+        ]);
+
+        $student = new User($request->all());
+        $request->session()->flash('success', 'Student added to graduating list successfully');
         return redirect()->back();
     }
 }

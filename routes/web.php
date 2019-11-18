@@ -36,4 +36,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', 'LoggedAdminController@showDashboard')->name('admin.dashboard');
     Route::get('/addDepartment', 'LoggedAdminController@showAddDepartment')->name('admin.addDepartment');
     Route::post('/addDepartment', 'LoggedAdminController@postAddDepartment')->name('admin.addDepartment.post');
+    Route::get('/addStudent', 'LoggedAdminController@showAddStudent')->name('admin.addStudent');
+    Route::post('/addStudent', 'LoggedAdminController@postAddStudent')->name('admin.addStudent.post');
 });
