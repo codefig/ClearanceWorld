@@ -26,6 +26,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/login', 'Auth\LoginController@userLogin')->name('user.login.post');
     Route::get('/logout', 'LoggedUserController@logout')->name('user.logout');
     Route::get('/dashboard', 'LoggedUserController@showDashboard')->name('user.dashboard');
+    Route::get('/apply', 'LoggedUserController@showApply')->name('user.apply');
 });
 
 Route::group(['prefix' => 'admin'], function () {

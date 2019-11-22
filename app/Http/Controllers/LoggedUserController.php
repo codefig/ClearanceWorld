@@ -23,6 +23,13 @@ class LoggedUserController extends Controller
 
     public function showDashboard()
     {
-        return view('user.dashboard');
+        $user = Auth::user();
+
+        return view('user.dashboard', compact('user'));
+    }
+
+    public function showApply()
+    {
+        return view('user.apply');
     }
 }

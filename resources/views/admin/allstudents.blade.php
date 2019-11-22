@@ -294,7 +294,7 @@
                     <th scope="col">Completion</th>
                     <th scope="col">Action</th>
                   </tr>
-                </thead>
+                </thead> 
                 <tbody>
 
                     @if(count($students)> 0)
