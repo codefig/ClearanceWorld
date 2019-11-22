@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class LoggedUserController extends Controller
 {
@@ -31,5 +32,11 @@ class LoggedUserController extends Controller
     public function showApply()
     {
         return view('user.apply');
+    }
+
+    public function showGraduating()
+    {
+        $students = User::all();
+        return view('user.graduating', compact('students'));
     }
 }
