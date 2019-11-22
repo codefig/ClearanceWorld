@@ -43,7 +43,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../index.html">
-        <img src="{{ URL::to('img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+        <img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -132,57 +132,35 @@
           </li>
           <li class="nav-item">
             <a class="nav-link " href="{{ route('user.apply') }}">
-              <i class="ni ni-planet text-blue"></i> Apply for Clearance.
+              <i class="ni ni-planet text-blue"></i> Apply for Clearance
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../examples/maps.html">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
+
+            <li class="nav-item">
+            <a class="nav-link " href="{{ route('user.apply') }}">
+              <i class="ni ni-planet text-yellow"></i> View Graduating List
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link  active " href="../examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i> User profile
+
+
+                    <li class="nav-item">
+            <a class="nav-link " href="{{ route('user.apply') }}">
+              <i class="ni ni-key-25 ni ni-pin-3 text-orange"></i> Check Application Status
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
+
+            <li class="nav-item">
+            <a class="nav-link " href="{{ route('user.apply') }}">
+              <i class="ni ni-planet text-blue"></i> Logout
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/login.html">
-              <i class="ni ni-key-25 text-info"></i> Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i> Register
-            </a>
-          </li>
+
         </ul>
         <!-- Divider -->
         <hr class="my-3">
         <!-- Heading -->
-        <h6 class="navbar-heading text-muted">Documentation</h6>
-        <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">
-          <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-              <i class="ni ni-spaceship"></i> Getting started
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-              <i class="ni ni-palette"></i> Foundation
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-              <i class="ni ni-ui-04"></i> Components
-            </a>
-          </li>
-        </ul>
+
+
       </div>
     </div>
   </nav>
@@ -205,37 +183,21 @@
         </form>
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
-          <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="{{ URL::to('img/theme/team-4-800x800.jpg') }}">
+                  <img alt="Image placeholder" src="{{ URL::to('img/oau.png') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span class="mb-0 text-sm  font-weight-bold">Logout</span>
                 </div>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
               <div class=" dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a href="../examples/profile.html" class="dropdown-item">
-                <i class="ni ni-single-02"></i>
-                <span>My profile</span>
-              </a>
-              <a href="../examples/profile.html" class="dropdown-item">
-                <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a href="../examples/profile.html" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
-              </a>
-              <a href="../examples/profile.html" class="dropdown-item">
-                <i class="ni ni-support-16"></i>
-                <span>Support</span>
-              </a>
+
               <div class="dropdown-divider"></div>
               <a href="{{ route('user.logout') }}" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
@@ -279,6 +241,7 @@
                         <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Library & Halls</a>
+                                <a class="nav-item nav-link" id="nav-hall-tab" data-toggle="tab" href="#nav-hall" role="tab" aria-controls="nav-hall" aria-selected="false">Halls</a>
                                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">DSA</a>
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Departmental </a>
                             </div>
@@ -302,6 +265,14 @@
 
                                 <div class="form-group">
                                     <label> Upload Library Card</label>
+                                    <input type="file" name="hall_file" id="hall_file" class="form-control" />
+                                </div>
+                            </div>
+
+                              <div class="tab-pane fade show" id="nav-hall" role="tabpanel" aria-labelledby="nav-hall-tab">
+
+                                <div class="form-group">
+                                    <label> Upload hall Clearance form</label>
                                     <input type="file" name="hall_file" id="hall_file" class="form-control" />
                                 </div>
                             </div>

@@ -188,7 +188,7 @@
                   <img alt="Image placeholder" src="{{ URL::to('img/oau.png') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Actions</span>
+                  <span class="mb-0 text-sm  font-weight-bold">Logout</span>
                 </div>
               </div>
             </a>
