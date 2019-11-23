@@ -270,7 +270,7 @@
             <div class="card-header bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Add Department</h3>
+                  <h3 class="mb-0">Add Student</h3>
                 </div>
                 <div class="col-4 text-right">
                   <a href="#!" class="btn btn-sm btn-primary"></a>
@@ -279,7 +279,7 @@
             </div>
             <div class="card-body">
               <form method="POST" action="{{ route('admin.addStudent.post') }}">
-                <h6 class="heading-small text-muted mb-4">Add NEW STUDENT to MATRIC LIST </h6>
+                <h6 class="heading-small text-muted mb-4">Add NEW STUDENT to GRADUATING LIST </h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
@@ -313,15 +313,24 @@
                         <label class="form-control-label" for="input-username">PASSWORD</label>
                         <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="Password">
                       </div>
+
+                                          <div class="form-group">
+                                              <label> Graduating ? </label>
+                                       <select name="is_graduating" class="form-control">
+                                           <option value="0">Not Graduating</option>
+                                           <option value="1">Graduating</option>
+                                       </select>
+                                   </div>
                     </div>
 
-
                   </div>
+
 
                   <div class="form-group">
-                      <button type="submit" class="btn btn-primary">AD TO GRADUATING LIST</button>
+                      <button type="submit" class="btn btn-primary">ADD STUDENT RECORD</button>
                       <input type="hidden" name="_token" value="{{ Session::token() }}" />
                   </div>
+
 
 
                   @if (count($errors) > 0)

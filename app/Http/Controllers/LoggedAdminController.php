@@ -70,11 +70,11 @@ class LoggedAdminController extends Controller
         $student->department = $request->department;
         $student->email_verified_at = null;
         $student->password = Hash::make($request->password);
-        $student->is_graduating = 1;
+        $student->is_graduating = $request->is_graduating;
         $student->is_approved = 0;
         $student->is_serving = 0;
         $student->save();
-        $request->session()->flash('success', 'Student added to graduating list successfully');
+        $request->session()->flash('success', 'Student record added successfully');
         return redirect()->back();
     }
 
