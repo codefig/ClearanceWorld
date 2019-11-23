@@ -42,7 +42,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../index.html">
-        <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -281,7 +281,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">ALL STUDENT LIST</h3>
+              <h3 class="mb-0">GRADUATING STUDENT LIST</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush" id="myTable">
@@ -318,7 +318,7 @@
                     </td>
                     <td>
                               <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i> {{ ($student->is_graduating == 1) ? "Graduating": "Not Graduating" }}
+                        <i class="bg-warning"></i> {{ ($student->is_graduating == 1)? "Graduating":"Not Graduating" }}
                       </span>
                     </td>
                     <td>

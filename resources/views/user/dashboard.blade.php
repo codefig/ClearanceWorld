@@ -142,6 +142,8 @@
           </li>
 
 
+
+
                     <li class="nav-item">
             <a class="nav-link " href="{{ route('user.apply') }}">
               <i class="ni ni-key-25 ni ni-pin-3 text-orange"></i> Check Application Status

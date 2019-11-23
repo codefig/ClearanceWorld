@@ -42,7 +42,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../index.html">
-        <img src="{{ URL::to('img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+<img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -98,7 +98,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="../index.html">
-                <img src="{{ URL::to('img/brand/blue.png') }}">
+                <img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -136,24 +136,16 @@
               <i class="ni ni-pin-3 text-orange"></i> View All Students
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link  active " href="../examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i> User profile
+
+             <li class="nav-item">
+            <a class="nav-link " href="{{ route('admin.graduants') }}">
+              <i class="ni ni-single-02 text-orange"></i> View Graduating List
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/login.html">
-              <i class="ni ni-key-25 text-info"></i> Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i> Register
+
+              <li class="nav-item">
+            <a class="nav-link " href="{{ route('admin.logout') }}">
+              <i class="ni ni-single-02 text-orange"></i> Logout
             </a>
           </li>
         </ul>

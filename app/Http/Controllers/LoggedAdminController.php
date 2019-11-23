@@ -78,10 +78,16 @@ class LoggedAdminController extends Controller
         return redirect()->back();
     }
 
-    public function showGraduatingList()
+    public function showAllStudents()
     {
         $students = User::all();
         return view('admin.allstudents', compact('students'));
+    }
+
+    public function showGraduatingList()
+    {
+        $students = User::where('is_graduating', '=', 1)->get();
+        return view('admin.graduating', compact('students'));
     }
 
     public function showApproved()
