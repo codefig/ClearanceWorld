@@ -150,7 +150,7 @@
           </li>
 
             <li class="nav-item">
-            <a class="nav-link " href="{{ route('user.apply') }}">
+            <a class="nav-link " href="{{ route('user.logout') }}">
               <i class="ni ni-planet text-blue"></i> Logout
             </a>
           </li>
@@ -238,7 +238,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav>
+                         @if(Auth::user()->submission)
+                        <div class="alert alert-success" role="alert">
+                      <h4 class="alert-heading"></h4>
+                      <strong>Thanks, You have already applied for Clearance & Verification, Please await your approval.</strong>
+                    </div>
+                        @else
+                              <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Library</a>
                                 <a class="nav-item nav-link" id="nav-hall-tab" data-toggle="tab" href="#nav-hall" role="tab" aria-controls="nav-hall" aria-selected="false">Halls</a>
@@ -300,8 +306,8 @@
 
                             </div>
                         </div>
-                    </form>
-
+                        </form>
+                        @endif
                     </div>
                     <br/>
                     @if(Session::has('success'))
