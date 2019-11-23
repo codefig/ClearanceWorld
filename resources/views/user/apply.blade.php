@@ -246,7 +246,9 @@
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Departmental </a>
                             </div>
                         </nav>
+                        <form method="POST" action="{{ route('user.apply.post') }}" enctype="multipart/form-data">
                         <div class="tab-content" id="nav-tabContent">
+
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <div class="form-group">
                                     <label>Upload Library Clearance form </label>
@@ -254,18 +256,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label> Upload hall Clearance form</label>
-                                    <input type="file" name="hall_file" id="hall_file" class="form-control" />
-                                </div>
-
-                                <div class="form-group">
                                     <label> Upload Borrowers Card </label>
-                                    <input type="file" name="hall_file" id="hall_file" class="form-control" />
+                                    <input type="file" name="borrow_file" id="borrow_file" class="form-control" />
                                 </div>
 
                                 <div class="form-group">
                                     <label> Upload Library Card</label>
-                                    <input type="file" name="hall_file" id="hall_file" class="form-control" />
+                                    <input type="file" name="libcard_file" id="libcard_file" class="form-control" />
                                 </div>
                             </div>
 
@@ -279,7 +276,7 @@
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                 <div class="form-group">
                                     <label>DSA Fee Transaction Receipt ID </label>
-                                    <input type="text" name="dsa_fee" id="dsa_fee" class='form-control' />
+                                    <input type="text" name="dsa_string" id="dsa_string" class='form-control' />
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
@@ -301,10 +298,29 @@
                                <input type="submit" class="btn btn-primary" value="APPLY FOR CLEARANCE" />
                                <input type="hidden" name="_token" value="{{ Session::token() }}"
 
-
                             </div>
                         </div>
+                    </form>
+
                     </div>
+                    <br/>
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                      <h4 class="alert-heading"></h4>
+                      <strong> {{ Session::get('success') }}</strong>
+                    </div>
+                    @endif
+                    <br/>
+                    @if(count($errors) > 0)
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      @foreach ($errors->all() as $err)
+                          <li>{{ $err }}</li>
+                      @endforeach
+                    </div>
+                    @endif
                 </div>
             </div>
         </section>
