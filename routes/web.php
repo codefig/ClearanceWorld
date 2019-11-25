@@ -43,4 +43,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/addStudent', 'LoggedAdminController@postAddStudent')->name('admin.addStudent.post');
     Route::get('/graduating', 'LoggedAdminController@showGraduatingList')->name('admin.graduants');
     Route::get('/allStudent', 'LoggedAdminController@showAllStudents')->name('admin.allstudent');
+    Route::get('/applications', 'LoggedAdminController@showApplications')->name('admin.applications');
 });

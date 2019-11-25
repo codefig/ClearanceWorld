@@ -15,7 +15,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,6 +30,7 @@
   <link href="{{ URL::to('js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{ URL::to('css/argon-dashboard.css?v=1.1.0') }}" rel="stylesheet" />
+  <link href="{{ URL::to('css/table.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -42,7 +42,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../index.html">
-<img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
+        <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -60,7 +60,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
-
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg
+">
+              </span>
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
@@ -84,7 +87,7 @@
               <span>Support</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="{{ route('admin.logout') }}" class="dropdown-item">
+            <a href="#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -98,7 +101,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="../index.html">
-                <img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
+                <img src="../assets/img/brand/blue.png">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -123,37 +126,37 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item  class=" active" ">
-          <a class=" nav-link " href="{{ route('admin.addStudent') }}"> <i class="ni ni-tv-2 text-primary"></i> Add Student
+          <a class=" nav-link " href=" ../index.html"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.addDepartment') }}">
-              <i class="ni ni-planet text-blue"></i> Add Department
+            <a class="nav-link " href="../examples/icons.html">
+              <i class="ni ni-planet text-blue"></i> Icons
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.allstudent') }}">
-              <i class="ni ni-pin-3 text-orange"></i> View All Students
+            <a class="nav-link " href="../examples/maps.html">
+              <i class="ni ni-pin-3 text-orange"></i> Maps
             </a>
           </li>
-
-             <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.graduants') }}">
-              <i class="ni ni-single-02 text-blue"></i> View Graduating List
+          <li class="nav-item">
+            <a class="nav-link " href="../examples/profile.html">
+              <i class="ni ni-single-02 text-yellow"></i> User profile
             </a>
           </li>
-
-                    <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.applications') }}">
-              <i class="ni ni-single-02 text-orange"></i> View Submitted Applications
+          <li class="nav-item">
+            <a class="nav-link  active " href="../examples/tables.html">
+              <i class="ni ni-bullet-list-67 text-red"></i> Tables
             </a>
           </li>
-
-
-
-              <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.logout') }}">
-              <i class="ni ni-single-02 text-orange"></i> Logout
+          <li class="nav-item">
+            <a class="nav-link" href="../examples/login.html">
+              <i class="ni ni-key-25 text-info"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../examples/register.html">
+              <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
         </ul>
@@ -187,7 +190,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">User Profile</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Tables</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -204,9 +207,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
 
-                </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                 </div>
               </div>
@@ -232,7 +233,7 @@
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="{{ route('admin.logout') }}" class="dropdown-item">
+              <a href="#!" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
@@ -243,39 +244,157 @@
     </nav>
     <!-- End Navbar -->
     <!-- Header -->
-    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(); background-size: cover; background-position: center top;">
-      <!-- Mask -->
-      <span class="mask bg-gradient-default opacity-8"></span>
-      <!-- Header container -->
-      <div class="container-fluid d-flex align-items-center">
-        <div class="row">
-          <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello Administrator</h1>
-            <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress youve made with your work and manage your projects or assigned tasks</p>
-            <a href="#!" class="btn btn-info">Edit profile</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Page content -->
-
-      <div class="row">
-        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-          <div class="card card-profile shadow">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="img/theme/team-4-800x800.jpg" class="rounded-circle">
-                  </a>
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
-
       </div>
+    </div>
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3 class="mb-0">ALL STUDENT LIST</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush" id="myTable">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Registration Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">LIBRARY FILE</th>
+                    <th scope="col">HALL FILE</th>
+                    <th scope="col">BORROWER CARD</th>
+                    <th scope="col">LIBRARY CARD</th>
+                    <th scope="col">DSA RECEIPT NUMBER</th>
+                    <th scope="col">PART ADVISER NAME</th>
+                    <th scope="col">PART ADVISER EMAIL</th>
+                    <th scope="col">DEPARTMENTAL CLEARANCE</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    @if(count($applications)> 0)
+                        @foreach ($applications as $application)
+                             <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{ $application->user->matric}}</span>
+                        </div>
+                      </div>
+                    </th>
+                      <td>
+                      {{ $application->user->name }}
+                    </td>
+                      <td>
+                      {{ $application->user->department }}
+                    </td>
+                    <td>
+                      <a href="{{ URL::to('uploads/'. $application->user->lib_file ) }}" target="_blank"> {{ $application->user->lib_file }}</a>
+                    </td>
+                    <td>
+                      <a href="{{ URL::to('uploads/'. $application->user->hall_file ) }}" target="_blank"> {{ $application->user->hall_file }}</a>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                    </span>
+                    <a href="{{ URL::to('uploads/'.$application->user->borrow_file) }}" target="_blank">{{$application->user->borrow_file}}</a>
+                    </td>
+                    <td>
+                            <a href="{{ URL::to('uploads/'.$application->user->libcard_file) }}">{{ $application->user->libcard_file}}</a>
+                        </td>
+                    <td>
+                       {{ $application->user->dsa_string}}
+                    </td>
+                         <td>
+                        {{ $application->user->adviser_name}}
+                    </td>
+                         <td>
+                        {{ $application->user->adviser_email}}
+                    </td>
+                         <td>
+                        <a href="{{ URL::to('uploads/'.$application->user->dept_file) }}">{{ $application->user->dept_file}}</a>
+                    </td>
+
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                          <a class="dropdown-item" href="#">Approve</a>
+                          <a class="dropdown-item" href="#">DisApprove</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                        @endforeach
+                    @endif
+
+
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Footer -->
       <footer class="footer">
         <div class="row align-items-center justify-content-xl-between">
@@ -304,14 +423,24 @@
       </footer>
     </div>
   </div>
-  <!--   Core   -->
-  <script src="{{ URL::to('js/plugins/jquery/dist/jquery.min.js') }}"></script>
-  <script src="{{ URL::to('js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <!--   Optional JS   -->
-  <!--   Argon JS   -->
-  <script src="{{ URL::to('js/argon-dashboard.min.js?v=1.1.0') }}"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ URL::to('js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{ URL::to('js/bootstrap/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ URL::to('js/bootstrap/bootstrap.min.js')}}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ URL::to('js/plugins/plugins.js')}}"></script>
+    <!-- Active js -->
+    <script src="{{ URL::to('js/active.js')}}"></script>
+    <script src="{{ URL::to('js/table.js')}}"></script>
 
+    <script>
+        $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+    </script>
 </body>
 
 </html>

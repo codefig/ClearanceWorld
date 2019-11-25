@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Department;
+use App\Submission;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -93,5 +94,13 @@ class LoggedAdminController extends Controller
     public function showApproved()
     {
         return view('admin.showapproved');
+    }
+
+    public function showApplications()
+    {
+        $applications = Submission::all();
+
+        return view('admin.applications', compact('applications'));
+        // return $applications;
     }
 }
