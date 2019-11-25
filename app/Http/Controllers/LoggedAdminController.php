@@ -101,6 +101,10 @@ class LoggedAdminController extends Controller
         $applications = Submission::all();
 
         return view('admin.applications', compact('applications'));
-        // return $applications;
+    }
+
+    public function approveSubmission($id)
+    {
+        return "Approve submission " . $id;
     }
 }
