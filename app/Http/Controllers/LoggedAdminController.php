@@ -107,4 +107,10 @@ class LoggedAdminController extends Controller
     {
         return "Approve submission " . $id;
     }
+
+    public function addCourse()
+    {
+        // return "this is the add course function";
+        return view('admin.addCourse');
+    }
 }

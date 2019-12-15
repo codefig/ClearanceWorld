@@ -42,7 +42,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../index.html">
-<img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
+        <img src="{{ URL::to('img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -60,7 +60,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
-
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="{{ URL::to('img/theme/team-1-800x800.jpg') }}
+">
+              </span>
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
@@ -84,7 +87,7 @@
               <span>Support</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="{{ route('admin.logout') }}" class="dropdown-item">
+            <a href="{{ route('user.logout') }}" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -98,7 +101,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="../index.html">
-                <img src="{{ URL::to('img/oau.png') }}" class="navbar-brand-img" alt="...">
+                <img src="{{ URL::to('img/brand/blue.png') }}">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -123,37 +126,37 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item  class=" active" ">
-          <a class=" nav-link " href="{{ route('admin.addcourse') }}"> <i class="ni ni-tv-2 text-primary"></i> Add Course
+          <a class=" nav-link " href=" ../index.html"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.addDepartment') }}">
-              <i class="ni ni-planet text-blue"></i> Add Department
+            <a class="nav-link " href="../examples/icons.html">
+              <i class="ni ni-planet text-blue"></i> Icons
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.allstudent') }}">
-              <i class="ni ni-pin-3 text-orange"></i> View All Students
+            <a class="nav-link " href="../examples/maps.html">
+              <i class="ni ni-pin-3 text-orange"></i> Maps
             </a>
           </li>
-
-             <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.graduants') }}">
-              <i class="ni ni-single-02 text-blue"></i> View Graduating List
+          <li class="nav-item">
+            <a class="nav-link  active " href="../examples/profile.html">
+              <i class="ni ni-single-02 text-yellow"></i> User profile
             </a>
           </li>
-
-                    <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.applications') }}">
-              <i class="ni ni-single-02 text-orange"></i> View Submitted Applications
+          <li class="nav-item">
+            <a class="nav-link " href="../examples/tables.html">
+              <i class="ni ni-bullet-list-67 text-red"></i> Tables
             </a>
           </li>
-
-
-
-              <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin.logout') }}">
-              <i class="ni ni-single-02 text-orange"></i> Logout
+          <li class="nav-item">
+            <a class="nav-link" href="../examples/login.html">
+              <i class="ni ni-key-25 text-info"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../examples/register.html">
+              <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
         </ul>
@@ -205,9 +208,10 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-
+                  <img alt="Image placeholder" src="{{ URL::to('img/theme/team-4-800x800.jpg') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
                 </div>
               </div>
             </a>
@@ -232,7 +236,7 @@
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="{{ route('admin.logout') }}" class="dropdown-item">
+              <a href="{{ route('user.logout') }}" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
@@ -250,7 +254,7 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello Administrator</h1>
+            <h1 class="display-2 text-white">Hello Jesse</h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress youve made with your work and manage your projects or assigned tasks</p>
             <a href="#!" class="btn btn-info">Edit profile</a>
           </div>
@@ -258,23 +262,73 @@
       </div>
     </div>
     <!-- Page content -->
-
+    <div class="container-fluid mt--7">
       <div class="row">
-        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-          <div class="card card-profile shadow">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="img/theme/team-4-800x800.jpg" class="rounded-circle">
-                  </a>
+
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">ADD NEW COURSE</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <a href="#!" class="btn btn-sm btn-primary"></a>
                 </div>
               </div>
             </div>
+            <div class="card-body">
+              <form method="POST" action="{{ route('admin.addStudent.post') }}">
+                <h6 class="heading-small text-muted mb-4">Add NEW COURSE </h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">TITLE</label>
+                        <input type="text" name="name" id="name" class="form-control form-control-alternative" placeholder="name" value="">
+                      </div>
+                    </div>
 
+                    <div class="form-group">
+                        <label> Course Banner </label>
+                        <input type="file" name="banner" accept="" class="form-control"  />
+                    </div>
+
+
+                   <div class='form-group'>
+                       <label>Introduction Text</label>
+                       <textarea name="intro_text" id="intro_text" class="form-control"></textarea>
+                   </div>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-primary">CREATE COURSE</button>
+                      <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                  </div>
+
+
+
+                  @if (count($errors) > 0)
+                <div class="alert alert-danger" role="alert">
+                    @foreach ($errors->all() as $err)
+                            <li> {{ $err }}</li>
+                    @endforeach
+                </div>
+                  @endif
+                </div>
+                <hr class="my-4" />
+              </form>
+
+              @if(Session::has('success'))
+                <p class="alert alert-primary">{{ Session::get('success') }} </p>
+              @endif
+            </div>
           </div>
         </div>
-
       </div>
       <!-- Footer -->
       <footer class="footer">

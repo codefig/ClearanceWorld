@@ -31,12 +31,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/graduating', 'LoggedUserController@showGraduating')->name('user.graduating');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'lecturer'], function () {
 
     Route::get('/login', 'Auth\LoginController@showAdminLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@adminLogin')->name('admin.login.post');
     Route::get('/logout', 'LoggedAdminController@logout')->name('admin.logout');
     Route::get('/dashboard', 'LoggedAdminController@showDashboard')->name('admin.dashboard');
+    Route::get('/addCourse', 'LoggedAdminController@addCourse')->name('admin.addcourse');
     Route::get('/addDepartment', 'LoggedAdminController@showAddDepartment')->name('admin.addDepartment');
     Route::post('/addDepartment', 'LoggedAdminController@postAddDepartment')->name('admin.addDepartment.post');
     Route::get('/addStudent', 'LoggedAdminController@showAddStudent')->name('admin.addStudent');
