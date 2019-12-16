@@ -31,13 +31,12 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/graduating', 'LoggedUserController@showGraduating')->name('user.graduating');
 });
 
-Route::group(['prefix' => 'lecturer'], function () {
+Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/login', 'Auth\LoginController@showAdminLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@adminLogin')->name('admin.login.post');
     Route::get('/logout', 'LoggedAdminController@logout')->name('admin.logout');
     Route::get('/dashboard', 'LoggedAdminController@showDashboard')->name('admin.dashboard');
-    Route::get('/addCourse', 'LoggedAdminController@addCourse')->name('admin.addcourse');
     Route::get('/addDepartment', 'LoggedAdminController@showAddDepartment')->name('admin.addDepartment');
     Route::post('/addDepartment', 'LoggedAdminController@postAddDepartment')->name('admin.addDepartment.post');
     Route::get('/addStudent', 'LoggedAdminController@showAddStudent')->name('admin.addStudent');
@@ -45,4 +44,10 @@ Route::group(['prefix' => 'lecturer'], function () {
     Route::get('/graduating', 'LoggedAdminController@showGraduatingList')->name('admin.graduants');
     Route::get('/allStudent', 'LoggedAdminController@showAllStudents')->name('admin.allstudent');
     Route::get('/applications', 'LoggedAdminController@showApplications')->name('admin.applications');
+
+    Route::get('/addCourse', 'LoggedAdminController@addCourse')->name('admin.addcourse');
+    Route::get('/addContent', 'LoggedAdminController@addContent')->name('admin.addcontent');
+    Route::get('/viewCourses', 'LoggedAdminController@viewCourses')->name('admin.viewcourses');
+    Route::get('/allCourses', 'LoggedAdminController@allCourses')->name('admin.allcourses');
+    Route::get('/myCourses', 'LoggedAdminController@myCourses')->name('admin.mycourses');
 });

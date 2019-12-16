@@ -110,7 +110,21 @@ class LoggedAdminController extends Controller
 
     public function addCourse()
     {
-        // return "this is the add course function";
         return view('admin.addCourse');
+    }
+
+    public function addContent()
+    {
+        return  view('admin.addContent');
+    }
+
+    public function myCourses()
+    {
+        return view('admin.mycourses');
+    }
+
+    public function allCourses()
+    {
+        return view('admin.allCourses');
     }
 }

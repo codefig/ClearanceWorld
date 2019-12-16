@@ -262,10 +262,10 @@
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--7">
+    <div class="container-fluid mt-7">
       <div class="row">
 
-        <div class="col-xl-8 order-xl-1">
+        <div class="col-xl-12 order-xl-1">
           <div class="card bg-secondary shadow">
             <div class="card-header bg-white border-0">
               <div class="row align-items-center">
@@ -279,25 +279,24 @@
             </div>
             <div class="card-body">
               <form method="POST" action="{{ route('admin.addStudent.post') }}">
-                <h6 class="heading-small text-muted mb-4">Add NEW COURSE </h6>
+                <h6 class="heading-small text-muted mb-4"></h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-username">TITLE</label>
-                        <input type="text" name="name" id="name" class="form-control form-control-alternative" placeholder="name" value="">
+                        <label class="form-control-label" for="input-username">Course Name</label>
+                        <input type="text" name="title" id="title" class="form-control form-control-alternative" placeholder="Title" value="">
                       </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-lg-6" >
                         <label> Course Banner </label>
-                        <input type="file" name="banner" accept="" class="form-control"  />
+                        <input type="file" name="banner" accept="" class="form-control"/>
                     </div>
 
-
-                   <div class='form-group'>
-                       <label>Introduction Text</label>
-                       <textarea name="intro_text" id="intro_text" class="form-control"></textarea>
+                   <div class='form-group col-lg-6'>
+                       <label>About Course</label>
+                       <textarea name="about_course" id="about_course" class="form-control"></textarea>
                    </div>
 
                     </div>
@@ -305,11 +304,10 @@
                   </div>
 
 
-                  <div class="form-group">
-                      <button type="submit" class="btn btn-primary">CREATE COURSE</button>
+                  <div class="form-group col-lg-6">
+                      <button type="submit" class="btn btn-danger">ADD TO COURSE</button>
                       <input type="hidden" name="_token" value="{{ Session::token() }}" />
                   </div>
-
 
 
                   @if (count($errors) > 0)
