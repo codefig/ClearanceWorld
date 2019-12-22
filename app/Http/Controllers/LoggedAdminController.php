@@ -134,7 +134,6 @@ class LoggedAdminController extends Controller
         $course->about = $request->about_course;
         $course->banner = $banner;
         $course->save();
-        // return $course;
         $request->session()->flash('success', 'Course Created successfully!');
         return redirect()->back();
     }
@@ -146,7 +145,9 @@ class LoggedAdminController extends Controller
 
     public function myCourses()
     {
-        return view('admin.mycourses');
+        $courses = Course::where('author_id', Auth::id())->get();
+        // return $courses;
+        return view('admin.mycourses', compact('courses'));
     }
 
     public function allCourses()

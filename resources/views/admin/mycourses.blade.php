@@ -283,41 +283,23 @@
                 <div class="pl-lg-4">
                   <div class="row">
 
- <div class="card text-right col-lg-4" style="width: 18rem;">
-  <img src="{{ URL::to("img/teacher.svg") }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-danger">View Students</a>
-  </div>
-</div>
 
- <div class="card text-right col-lg-4" style="width: 18rem;">
-  <img src="{{ URL::to("img/teacher.svg") }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-danger">Go somewhere</a>
-  </div>
-</div>
+                    @if(count($courses) > 0)
+                        @foreach ($courses as $course)
 
- <div class="card text-right col-lg-4" style="width: 18rem;">
-  <img src="{{ URL::to("img/teacher.svg") }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-danger">Go somewhere</a>
-  </div>
-</div>
+                        <div class="card text-right col-lg-4" style="width: 18rem;">
+                         <img src="{{ URL::to('/'.$course->publicImage())}}" class="card-img-top" alt="...">
+                         <div class="card-body">
+                           <p class="card-text">{{ $course->title }}</p>
+                           <a href="#" class="btn btn-primary">View Course</a>
+                           <a href="#" class="btn btn-danger">View Students</a>
+                         </div>
+                       </div>
 
- <div class="card text-right col-lg-4" style="width: 18rem;">
-  <img src="{{ URL::to("img/teacher.svg") }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-danger">Go somewhere</a>
-  </div>
-</div>
+                        @endforeach
+                    @endif
+
+
 
                   @if (count($errors) > 0)
                 <div class="alert alert-danger" role="alert">

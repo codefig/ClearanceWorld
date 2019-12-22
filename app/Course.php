@@ -19,4 +19,9 @@ class Course extends Model
     {
         return $this->belongsTo('App\Admin');
     }
+
+    public function publicImage()
+    {
+        return 'uploads/' . $this->banner;
+    }
 }
