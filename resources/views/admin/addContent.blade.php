@@ -278,7 +278,7 @@
               </div>
             </div>
             <div class="card-body">
-              <form method="POST" action="{{ route('admin.addStudent.post') }}">
+              <form method="POST" enctype="multipart/form-data" action="{{ route('admin.addcontent.post') }}" enctype="multipart/form-data">
                 <h6 class="heading-small text-muted mb-4">Add Course Material </h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -291,21 +291,24 @@
 
                     <div class="form-group col-lg-6">
                           <label for="">Select Course</label>
-                          <select class="form-control" name="" id="">
-                            <option>Something</option>
-                            <option>Anpother</option>
-                            <option>Antacide</option>
+                          <select class="form-control" name="course_id" id="">
+                              @if(count($mycourses) > 0)
+                                @foreach ($mycourses as $course)
+                                <option value="{{ $course->id }}">{{ $course->title }}</option>
+                                @endforeach
+                              @endif
+
                           </select>
                     </div>
 
                     <div class="form-group col-lg-6" >
                         <label> Course Media </label>
-                        <input type="file" name="media" accept="" class="form-control"/>
+                          <input type="file" class="form-control" name="media" id="media" placeholder="" aria-describedby="fileHelpId">
                     </div>
 
                    <div class='form-group col-lg-6'>
                        <label>Module Information</label>
-                       <textarea name="module_info" id="module_info" class="form-control"></textarea>
+                       <textarea name="info" id="info" class="form-control"></textarea>
                    </div>
 
                     </div>

@@ -48,6 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/addCourse', 'LoggedAdminController@addCourse')->name('admin.addcourse');
     Route::post('/addCourse', 'LoggedAdminController@postAddCourse')->name('admin.addcourse.post');
     Route::get('/addContent', 'LoggedAdminController@addContent')->name('admin.addcontent');
+    Route::post('/addContent', 'LoggedAdminController@postAddContent')->name('admin.addcontent.post');
     Route::get('/viewCourses', 'LoggedAdminController@viewCourses')->name('admin.viewcourses');
     Route::get('/allCourses', 'LoggedAdminController@allCourses')->name('admin.allcourses');
     Route::get('/myCourses', 'LoggedAdminController@myCourses')->name('admin.mycourses');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Department;
+use App\Material;
 use App\Submission;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -140,13 +141,34 @@ class LoggedAdminController extends Controller
 
     public function addContent()
     {
-        return  view('admin.addContent');
+        $mycourses = Course::where('author_id', Auth::id())->get();
+        return  view('admin.addContent', compact('mycourses'));
+    }
+
+    public function postAddContent(Request $request)
+    {
+
+        $this->validate($request, [
+            'title' => 'required',
+            'course_id' => "required|integer",
+            'info' => 'required',
+            'media' => 'required|mimes:jpeg,png,jpg,docx,pdf,mp4,zip|max:5096'
+        ]);
+
+        $material = new Material($request->all());
+        $image = $request->file('media');
+        $media_file = time() . "__" . $request->media->getClientOriginalName();
+        $image->move(public_path('materials'), $media_file);
+        $material->author_id = Auth::id();
+        $material->media = $media_file;
+        $material->save();
+        $request->session()->flash('success', 'Material Added to course  successfully!');
+        return redirect()->back();
     }
 
     public function myCourses()
     {
         $courses = Course::where('author_id', Auth::id())->get();
-        // return $courses;
         return view('admin.mycourses', compact('courses'));
     }
 
