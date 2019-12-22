@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -111,6 +112,31 @@ class LoggedAdminController extends Controller
     public function addCourse()
     {
         return view('admin.addCourse');
+    }
+
+    public function postAddCourse(Request $request)
+    {
+        $author_id = Auth::id();
+        $this->validate($request, [
+            'title' => 'required|unique:courses,NULL,title,id,author_id,' . Auth::id(),
+            'banner' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'about_course' => 'required'
+        ], [
+            'title.unique' => 'Sorry, You created a course with this title already',
+        ]);
+
+        $banner = 'banner-' . time() . '.' . $request->banner->getClientOriginalExtension();
+        request()->banner->move(public_path('uploads'), $banner);
+
+        $course = new Course();
+        $course->title = $request->title;
+        $course->author_id = Auth::id();
+        $course->about = $request->about_course;
+        $course->banner = $banner;
+        $course->save();
+        // return $course;
+        $request->session()->flash('success', 'Course Created successfully!');
+        return redirect()->back();
     }
 
     public function addContent()

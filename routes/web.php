@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/applications', 'LoggedAdminController@showApplications')->name('admin.applications');
 
     Route::get('/addCourse', 'LoggedAdminController@addCourse')->name('admin.addcourse');
+    Route::post('/addCourse', 'LoggedAdminController@postAddCourse')->name('admin.addcourse.post');
     Route::get('/addContent', 'LoggedAdminController@addContent')->name('admin.addcontent');
     Route::get('/viewCourses', 'LoggedAdminController@viewCourses')->name('admin.viewcourses');
     Route::get('/allCourses', 'LoggedAdminController@allCourses')->name('admin.allcourses');

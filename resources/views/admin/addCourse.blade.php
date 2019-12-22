@@ -278,7 +278,7 @@
               </div>
             </div>
             <div class="card-body">
-              <form method="POST" action="{{ route('admin.addStudent.post') }}">
+              <form method="POST" action="{{ route('admin.addcourse.post') }}" enctype="multipart/form-data">
                 <h6 class="heading-small text-muted mb-4"></h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -305,7 +305,7 @@
 
 
                   <div class="form-group col-lg-6">
-                      <button type="submit" class="btn btn-danger">ADD TO COURSE</button>
+                      <button type="submit" class="btn btn-danger">CREATE COURSE</button>
                       <input type="hidden" name="_token" value="{{ Session::token() }}" />
                   </div>
 
